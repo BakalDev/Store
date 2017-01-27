@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 // routing
-import { AppRoutingModule } from './app-router.module';
+import { AppRoutingModule } from './app-routing.module';
 
 // store
 import { StoreModule } from '@ngrx/store';
@@ -13,11 +13,13 @@ import { alertReducer } from './store/reducers/alert';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
+import { AlertComponent } from './components/shared/alert/alert.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    AlertComponent
   ],
   imports: [
     BrowserModule,

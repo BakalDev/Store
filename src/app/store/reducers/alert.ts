@@ -6,6 +6,7 @@ export const INCREMENT = 'INCREMENT';
 export const DECREMENT = 'DECREMENT';
 export const RESET = 'RESET';
 export const SET = 'SET';
+export const GET = 'GET';
 
 const initialState: alert = {
     count: 0,
@@ -31,7 +32,9 @@ export function alertReducer(state: alert = initialState, action: Action) {
             state.alertType = "Resetal Type";
             return state;
         case SET:
-        return state = action.payload;
+            return state = action.payload;
+        case GET:
+            return state;
         default:
             state.count = 0;
             state.alertMessage = "Defaultal";
