@@ -1,19 +1,34 @@
 import { ActionReducer, Action } from '@ngrx/store';
 
+import { counter } from '../models/counter';
+
 export const INCREMENT = 'INCREMENT';
 export const DECREMENT = 'DECREMENT';
 export const RESET = 'RESET';
 
-export function counterReducer(state: number = 0, action: Action) {
+const initialState: counter = {
+    count: 0,
+    message: "Inital State"
+};
+
+export function counterReducer(state: counter = initialState, action: Action) {
     switch (action.type) {
         case INCREMENT:
-            return state += 1;
+            state.count += 1;
+            state.message = "Incremental";
+            return state;
         case DECREMENT:
-            return state -= 1;
+            state.count -= 1;
+            state.message = "Decremental";
+            return state;
         case RESET:
-            return state = 0;
+            state.count = 0;
+            state.message = "Resetal"
+            return state;
         default:
-            return state = 0;
+            state.count = 0;
+            state.message = "Defaultal";
+            return state;
     }
 
 }
