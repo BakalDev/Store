@@ -11,6 +11,9 @@ import { GET } from '../../../store/reducers/alert';
   selector: 'app-alert',
   styleUrls: ['./alert.component.scss'],
   template: `
+
+
+
   <p>Type {{ (alert | async)?.alertType }}</p>
   <p>Message {{ (alert | async)?.alertMessage }}</p>
   <p>Count {{ (alert | async)?.count }}</p>
@@ -19,18 +22,10 @@ import { GET } from '../../../store/reducers/alert';
 export class AlertComponent implements OnInit {
 
   @Input() alert: Observable<alert>;
+  // alert;
+  //  @Input() set alert(this.alert) {
+  //       this._hero = Object.assign({}, value);
+  //   }
 
-  constructor(private store: Store<alert>) {
-    // this.alert = store.select('alert');
-  }
-
-  ngOnInit() {
-    console.log(this.alert);
-   }
-
-  // set() {
-  //   // alertType: "Set", alertMessage: "Set Message", count: 100
-  //   this.store.dispatch({ type: SET, payload: { alertType: "Set", alertMessage: "Set Message", count: 100 } });
-  // }
-
+  ngOnInit() {}
 }
